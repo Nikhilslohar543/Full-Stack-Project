@@ -1,0 +1,47 @@
+<div class="container">
+
+    <button class="btn btn-primary" (click)="goto()">Back</button><br><br>
+
+    <div class="card">
+        
+        <div class="card-header">
+            <h3>Add Expence</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form (ngSubmit)="onSubmit()" #ExpenceForm="ngForm" novalidate>          
+                <div class="form-group mb-4">
+                    <label for="expName">Expence name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="expName" [(ngModel)]="expences.expName" name="expName" required #expName="ngModel">
+                    <div *ngIf="expName.invalid && expName.touched" class="text-danger">
+                        Expence name is required.
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="amount">Amount <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="amount" [(ngModel)]="expences.amount" name="amount" required #amount="ngModel">
+                    <div *ngIf="amount.invalid && amount.touched" class="text-danger">
+                        Amount is required.
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="date">Date <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="date" [(ngModel)]="expences.date" name="date" required #date="ngModel">
+                    <div *ngIf="date.invalid && date.touched" class="text-danger">
+                        Date is required.
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="description">Expence Description</label>
+                    <input type="text" class="form-control" id="description" [(ngModel)]="expences.description" name="description" required #description="ngModel">
+                </div>
+
+                <button class="btn btn-outline-primary login_btn" type="submit" [disabled]="ExpenceForm.invalid">Add Expence</button>
+            </form>
+        </div>
+    </div>
+</div>

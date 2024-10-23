@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="card">
+            <div class="card-header justify-content-center">
+                <h3>Sign Up</h3>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="onSignup()">
+                    <div class="input-group form-group mb-4">
+                        <input type="text" class="form-control" placeholder="First name" [(ngModel)]="users.first_name" name="first_name">
+                    </div>
+                    <div class="input-group form-group mb-4">
+                        <input type="text" class="form-control" placeholder="Last name" [(ngModel)]="users.last_name" name="last_name">
+                    </div>
+                    <div class="input-group form-group mb-4">
+                        <input type="text" class="form-control" placeholder="Username" [(ngModel)]="users.username" name="username">
+                    </div>
+                    <div class="input-group form-group mb-4">
+                        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="users.password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Signup" class="btn float-right login_btn">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Already have an account?<a [routerLink]="['/home/signin']">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

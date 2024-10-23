@@ -1,0 +1,51 @@
+<div class="container">
+
+    <button class="btn btn-primary" (click)="goto()">Back</button><br><br>
+
+    <div class="card">
+        
+        <div class="card-header">
+            <h3>Expence Details</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form #expForm="ngForm" (ngSubmit)="onSubmit()">            
+                <div class="form-group mb-4">
+                    <label for="expName">Expence name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="expName" [(ngModel)]="expences.expName" name="expName" required #expName="ngModel">
+                    <div *ngIf="expName.invalid && expName.touched" class="text-danger">
+                        Expence name is required.
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="amount">Amount <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="amount" [(ngModel)]="expences.amount" name="amount" required #amount="ngModel">
+                    <div *ngIf="amount.invalid && amount.touched" class="text-danger">
+                        Amount is required.
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="date">Date <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="date" [(ngModel)]="expences.date" name="date" required #date="ngModel">
+                    <div *ngIf="date.invalid && date.touched" class="text-danger">
+                        Date is required.
+                    </div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="description">Expence Description<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="description" [(ngModel)]="expences.description" name="description" required #description="ngModel">
+                    <div *ngIf="description.invalid && description.touched" class="text-danger">
+                        Description is requierd
+                    </div>
+                </div>
+
+                <button class="btn btn-outline-primary login_btn" type="submit" [disabled]="expForm.invalid">Update Expence</button>&nbsp;&nbsp;
+                <button class="btn btn-outline-danger login_btn" (click)="delete(expences.id)">Delete Expence</button>
+            </form>
+        </div>
+    </div>
+</div>

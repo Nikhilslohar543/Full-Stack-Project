@@ -1,0 +1,17 @@
+.card {
+    height: auto;
+    margin-top: 18%;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    padding: 20px;
+    -ms-flex-align: center;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 20px rgba(34, 41, 236, 0.8), /* Neon glow */
+    0 0 30px rgba(0, 200, 255, 0.6), 
+    0 0 40px rgba(0, 200, 255, 0.4);
+}
+
+.card-header h3 {
+    color: white;
+}

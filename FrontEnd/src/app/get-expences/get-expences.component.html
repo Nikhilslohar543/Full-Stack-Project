@@ -1,0 +1,22 @@
+<div style="margin: 20px;">
+    <div class="header">
+    <h3>Expnces List</h3>
+    </div>
+    <br><br>
+    <div class="container">
+        <button class="btn btn-primary" (click)="goto()">Back</button><br><br>
+        <div *ngIf="!tempdata || tempdata.length === 0" class="alert alert-info">
+            No expences found. Add some expences to see them here.
+        </div>
+        <div class="row" *ngIf="tempdata.length > 0">
+            <div class="col-md-4" *ngFor="let i of tempdata">
+                <div class="card mb-3" (click)="onClick(i.id)">
+                    <h4 class="card-title" style="color: yellow;">{{ i.expName }}</h4>
+                    <p class="card-text"><strong>Amount:</strong> {{ i.amount }}</p>
+                    <p class="card-text"><strong>Date:</strong> {{ i.date | date: 'dd-MM-yyyy' }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

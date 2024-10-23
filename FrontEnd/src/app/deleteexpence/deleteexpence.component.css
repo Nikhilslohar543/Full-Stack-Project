@@ -1,0 +1,42 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    padding: 20px;
+    backdrop-filter: blur(5px); /* Apply the blur effect */
+    box-shadow: 0 0 20px rgba(34, 41, 236, 0.8), /* Neon glow */
+                0 0 30px rgba(0, 200, 255, 0.6), 
+                0 0 40px rgba(0, 200, 255, 0.4);
+
+}
+
+
+.card-title {
+    color: white;
+}
+
+.form-group.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
